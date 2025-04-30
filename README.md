@@ -1,4 +1,3 @@
-
 # 🛡️ SOAR + EDR Project
 
 ## 🎯 Objective
@@ -56,7 +55,9 @@ Once detected, the event is forwarded to **Tines**, where a custom playbook (Sto
 
 - ## 📋 Steps
 
-1. Onboarded LimaCharlie to the VM using the sensor key.![unnamed](https://github.com/user-attachments/assets/760f688b-aa49-486e-9e64-14df45ad1da3)
+1. Onboarded LimaCharlie to the VM using the sensor key.
+
+   ![unnamed](https://github.com/user-attachments/assets/760f688b-aa49-486e-9e64-14df45ad1da3)
 
 
 
@@ -65,44 +66,48 @@ Once detected, the event is forwarded to **Tines**, where a custom playbook (Sto
 
 
 
-3. Verified that the agent was installed and that the VM was onboarded by checking the sensor list page on LimaCharlie, confirming the process was successful (Hostname: RIO-SOAR-EDR). ![step 2](https://github.com/user-attachments/assets/fddf1783-c537-4008-982a-43463f62a219)
+
+2. Verified that the agent was installed and that the VM was onboarded by checking the sensor list page on LimaCharlie, confirming the process was successful (Hostname: RIO-SOAR-EDR).
+
+   ![step 2](https://github.com/user-attachments/assets/fddf1783-c537-4008-982a-43463f62a219)
 
 
 
 
 
-4. Installed and ran `LaZagne.exe` on the VM — an open-source post-exploitation tool used to recover stored passwords on a system.![step 3](https://github.com/user-attachments/assets/af129eab-0480-4c69-b968-c2358bf59bb1) ![step3 2](https://github.com/user-attachments/assets/83f33b0e-568e-48fa-8a64-6f80dcac203c)
+
+3. Installed and ran `LaZagne.exe` on the VM — an open-source post-exploitation tool used to recover stored passwords on a system.![step 3](https://github.com/user-attachments/assets/af129eab-0480-4c69-b968-c2358bf59bb1) ![step3 2](https://github.com/user-attachments/assets/83f33b0e-568e-48fa-8a64-6f80dcac203c)
 
 
 
 
 
-5. Checked the timeline on LimaCharlie to verify that the EDR detected `LaZagne.exe` being executed.![step4](https://github.com/user-attachments/assets/6311e0ff-7d0b-4ad7-a0d5-f86315ad4246)
+4. Checked the timeline on LimaCharlie to verify that the EDR detected `LaZagne.exe` being executed.![step4](https://github.com/user-attachments/assets/6311e0ff-7d0b-4ad7-a0d5-f86315ad4246)
 
 
-6. Navigated to **Automation > D&R Rules** and created a detection rule to identify events related to `LaZagne.exe`.![step 5](https://github.com/user-attachments/assets/de42d570-09bd-4a57-9ff5-439cb2724525)![step 5 1](https://github.com/user-attachments/assets/eddffcea-7adc-4329-9386-6175c2b391f3)
-
-
-
-7. Tested the rule by selecting the **Target Event** tab, pasting the event into the input box, and confirming the rule successfully detected the desired events.![step 6](https://github.com/user-attachments/assets/ddf7addb-cf2f-4a71-9067-637126139948)![step 6 1](https://github.com/user-attachments/assets/77e92e59-db7a-45ad-bee5-584afc94b6e3)
+5. Navigated to **Automation > D&R Rules** and created a detection rule to identify events related to `LaZagne.exe`.![step 5](https://github.com/user-attachments/assets/de42d570-09bd-4a57-9ff5-439cb2724525)![step 5 1](https://github.com/user-attachments/assets/eddffcea-7adc-4329-9386-6175c2b391f3)
 
 
 
-8. Re-ran `LaZagne.exe` and verified detection under the **Detections** tab on LimaCharlie.![step 7](https://github.com/user-attachments/assets/d97803ce-cbff-42fa-8de7-c37ff8c0c078)![step 7 1](https://github.com/user-attachments/assets/e08714a9-9f2b-4251-96be-41deb517ee43)
+6. Tested the rule by selecting the **Target Event** tab, pasting the event into the input box, and confirming the rule successfully detected the desired events.![step 6](https://github.com/user-attachments/assets/ddf7addb-cf2f-4a71-9067-637126139948)![step 6 1](https://github.com/user-attachments/assets/77e92e59-db7a-45ad-bee5-584afc94b6e3)
 
 
 
-9. Created a channel in Slack named `alerts`.![step 8](https://github.com/user-attachments/assets/fa078419-8073-4baf-a2f5-278ec93713fc)
+7. Re-ran `LaZagne.exe` and verified detection under the **Detections** tab on LimaCharlie.![step 7](https://github.com/user-attachments/assets/d97803ce-cbff-42fa-8de7-c37ff8c0c078)![step 7 1](https://github.com/user-attachments/assets/e08714a9-9f2b-4251-96be-41deb517ee43)
 
 
-10. Created a Tines account and established the connection between LimaCharlie and Tines using a **WebHook Action (Retrieve Detections)**
+
+8. Created a channel in Slack named `alerts`.![step 8](https://github.com/user-attachments/assets/fa078419-8073-4baf-a2f5-278ec93713fc)
+
+
+9. Created a Tines account and established the connection between LimaCharlie and Tines using a **WebHook Action (Retrieve Detections)**
    - Navigated to **Output Streams** in LimaCharlie  
    - Selected **Detections**, chose **Tines** as destination  
    - Configured the name and destination host, then saved the configuration  
    - Confirmed that Tines Webhooks was receiving the detections.![step 9](https://github.com/user-attachments/assets/9141b2ef-6ded-4cdf-b74a-20f55d9ea6e9)![step 9 1](https://github.com/user-attachments/assets/1d20ddf3-6ba0-4d82-b917-de8818a98ef4)![step 9 2](https://github.com/user-attachments/assets/a21745a2-a88c-467c-a0fb-1f60a8e06ace)![step9 3](https://github.com/user-attachments/assets/b927cfb2-a205-42ff-9f7a-eca73927bcda)![step 9 4](https://github.com/user-attachments/assets/e2eea357-15e4-4bd4-8114-03390c7e8e78)![step 9 5](https://github.com/user-attachments/assets/878cab1d-3c4d-42ed-bca5-80dc4b2c3bd6)
 
 
-11. Integrated Slack with Tines by adding Slack credentials to Tines.  
+10. Integrated Slack with Tines by adding Slack credentials to Tines.  
     - Added the Slack template to the Story (playbook)  
     - Used the **Send a Message** function with the Slack channel ID  
     - Configured it to send detection alerts to the `alerts` channel![10](https://github.com/user-attachments/assets/6958258b-dfa0-44bb-841d-ca802c69c00d)![10 1](https://github.com/user-attachments/assets/40de344a-a436-4e92-ab62-da01ee8bc925)![10 2](https://github.com/user-attachments/assets/219d22ed-3ee0-4cf6-bc5c-85271db500a5)
@@ -110,16 +115,16 @@ Once detected, the event is forwarded to **Tines**, where a custom playbook (Sto
 
 
 
-12. Added the **Send an Email** function and configured it to email detection details.![11](https://github.com/user-attachments/assets/03c3bbef-5d2f-4892-8d0f-34fceb4b0982)![11 1](https://github.com/user-attachments/assets/4f731c70-c5c4-45c8-8aeb-b05f01372f56)
+11. Added the **Send an Email** function and configured it to email detection details.![11](https://github.com/user-attachments/assets/03c3bbef-5d2f-4892-8d0f-34fceb4b0982)![11 1](https://github.com/user-attachments/assets/4f731c70-c5c4-45c8-8aeb-b05f01372f56)
 
 
 
-13. Added a **User Prompt** with detection details and the question:  
+12. Added a **User Prompt** with detection details and the question:  
     > “Does the user want to isolate the machine? (YES/NO)”![12](https://github.com/user-attachments/assets/fc2d10db-8444-44b2-82b0-cdf17719c233)![12 1](https://github.com/user-attachments/assets/cbfe9616-e998-4a0d-9274-5c65e9430d1a)
 
 
 
-14. Configured the **NO** trigger to send a Slack message:
+13. Configured the **NO** trigger to send a Slack message:
  > “The computer `<computer>` was not isolated. Please investigate.”![13](https://github.com/user-attachments/assets/d30af0a2-f731-4dfe-8b3d-e7029f64b008)![13 1](https://github.com/user-attachments/assets/4a04a180-20a8-4057-bf62-7ad52cc3dbfa)![13 2](https://github.com/user-attachments/assets/a2b22342-aad3-4a7e-be8f-f764cdf00b34)
 
 
@@ -136,13 +141,19 @@ Once detected, the event is forwarded to **Tines**, where a custom playbook (Sto
     ```
     Isolation Status: True  
     The Computer: <Computer Name>!
+    ```
+
     ![16](https://github.com/user-attachments/assets/815a1174-a5b8-4089-a11c-5e0fe43a385e)
 
 
 
 
 
+
 17. Ran `LaZagne.exe`, received Slack and email alerts, selected **YES** for device isolation in the prompt, received a Slack confirmation message, and verified that the VM was automatically isolated in LimaCharlie — confirming full functionality and successful project completion.![step 17](https://github.com/user-attachments/assets/39831cf6-9760-4142-85a3-ddc011632355)![step 17 1](https://github.com/user-attachments/assets/2ef1c2b4-77f6-4c4e-adc1-5971df6cb63e)
+
+
+
 
 
 
