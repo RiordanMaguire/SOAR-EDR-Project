@@ -68,8 +68,9 @@ Once detected, the event is forwarded to **Tines**, where a custom playbook (Sto
 
 
 2. Verified that the agent was installed and that the VM was onboarded by checking the sensor list page on LimaCharlie, confirming the process was successful (Hostname: RIO-SOAR-EDR).
+![step 2 refix](https://github.com/user-attachments/assets/a3c94aa2-7278-4853-9685-8060bd9d88dc)
 
-   ![step 2](https://github.com/user-attachments/assets/fddf1783-c537-4008-982a-43463f62a219)
+   
 
 
 
@@ -82,18 +83,24 @@ Once detected, the event is forwarded to **Tines**, where a custom playbook (Sto
 
 
 
-4. Checked the timeline on LimaCharlie to verify that the EDR detected `LaZagne.exe` being executed.![step4](https://github.com/user-attachments/assets/6311e0ff-7d0b-4ad7-a0d5-f86315ad4246)
-
-
-5. Navigated to **Automation > D&R Rules** and created a detection rule to identify events related to `LaZagne.exe`.![step 5](https://github.com/user-attachments/assets/de42d570-09bd-4a57-9ff5-439cb2724525)![step 5 1](https://github.com/user-attachments/assets/eddffcea-7adc-4329-9386-6175c2b391f3)
+4. Checked the timeline on LimaCharlie to verify that the EDR detected `LaZagne.exe` being executed.![step 4 refix](https://github.com/user-attachments/assets/dadf1f10-6e5c-458f-8517-f669e115ce6a)
 
 
 
-6. Tested the rule by selecting the **Target Event** tab, pasting the event into the input box, and confirming the rule successfully detected the desired events.![step 6](https://github.com/user-attachments/assets/ddf7addb-cf2f-4a71-9067-637126139948)![step 6 1](https://github.com/user-attachments/assets/77e92e59-db7a-45ad-bee5-584afc94b6e3)
+5. Navigated to **Automation > D&R Rules** and created a detection rule to identify events related to `LaZagne.exe`.![step 5 1 refix](https://github.com/user-attachments/assets/a26d25b3-3a2b-4e22-b72c-4d32ee194148)![step 5 2 refix](https://github.com/user-attachments/assets/c70d87e6-e319-45dc-9f7e-b59605980466)
 
 
 
-7. Re-ran `LaZagne.exe` and verified detection under the **Detections** tab on LimaCharlie.![step 7](https://github.com/user-attachments/assets/d97803ce-cbff-42fa-8de7-c37ff8c0c078)![step 7 1](https://github.com/user-attachments/assets/e08714a9-9f2b-4251-96be-41deb517ee43)
+
+
+6. Tested the rule by selecting the **Target Event** tab, pasting the event into the input box, and confirming the rule successfully detected the desired events.![step 6 refix](https://github.com/user-attachments/assets/6401565f-f262-491b-a21e-59221e3d62eb)![step 6 1 refix](https://github.com/user-attachments/assets/8090104e-6f5f-4bb1-a361-5348d29be60a)
+
+
+
+
+
+7. Re-ran `LaZagne.exe` and verified detection under the **Detections** tab on LimaCharlie.![step 7](https://github.com/user-attachments/assets/d97803ce-cbff-42fa-8de7-c37ff8c0c078)![step 7 refix](https://github.com/user-attachments/assets/9b78c818-1b9d-4cbc-b821-f9911b51205a)
+
 
 
 
@@ -120,7 +127,7 @@ Once detected, the event is forwarded to **Tines**, where a custom playbook (Sto
 
 
 12. Added a **User Prompt** with detection details and the question:  
-    > “Does the user want to isolate the machine? (YES/NO)”![12](https://github.com/user-attachments/assets/fc2d10db-8444-44b2-82b0-cdf17719c233)![12 1](https://github.com/user-attachments/assets/cbfe9616-e998-4a0d-9274-5c65e9430d1a)
+    > “Does the user want to isolate the machine? (YES/NO)”![12](https://github.com/user-attachments/assets/fc2d10db-8444-44b2-82b0-cdf17719c233)![step 11 refix](https://github.com/user-attachments/assets/3e577b03-f41c-4f23-a2fb-ba047514cdfa)
 
 
 
