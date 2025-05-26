@@ -68,7 +68,10 @@ Once detected, the event is forwarded to **Tines**, where a custom playbook (Sto
 
 
 2. Verified that the agent was installed and that the VM was onboarded by checking the sensor list page on LimaCharlie, confirming the process was successful (Hostname: RIO-SOAR-EDR).
-![step 2 refix](https://github.com/user-attachments/assets/a3c94aa2-7278-4853-9685-8060bd9d88dc)
+
+    ![step 2 refix](https://github.com/user-attachments/assets/7dc68e16-6b11-4c48-ab36-c1031d28c647)
+
+
 
    
 
